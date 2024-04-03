@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Creative studio, Advertising, Entertainment, Experiences">
+    <meta name="description" content="Rethinking Iconic is a creative studio that specializes in advertising, entertainment, and experiences.">
+    <meta name="author" content="Ligre.studio for Icònic">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="yahoo" content="index, follow">
+    <meta name="alexa" content="index, follow">
+
+    <link rel="icon" href="favicon-rt4.png">   
+    <title>Rethinking Iconic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="screen-header">
+        <header>
+            <div class="header--name">
+                <p>Icònic</p>
+                <p>Creative Studio</p>
+            </div>
+            <div class="header--tel">
+                <a href="tel:+34650293306">+34 650 293 306</a>
+                <a href="tel:+34692635218">+34 692 635 218</a>
+            </div>
+            <div class="header--contact">
+                <a href="mailto:hola@iconic.film">hola@<br>iconic.film</a>
+            </div>
+        </header>
+        <main>
+            <div><h1>We are re<span class="main--dash">-</span>thinking <span class="main--iconic">Icònic</span></h1></div>
+            
+        </main>
+        <aside>
+            <div class="aside--advertising"><p>Advertising</p>
+                <video autoplay muted loop id="advertising-video" style="display: none;">
+                    <source src="video/video-ex01.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div><p class="aside--entertainment">Entertainment</p>
+                <video autoplay muted loop id="entertainment-video" style="display: none;">
+                    <source src="video/video-ex02.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div><p class="aside--experiences">Experiences</p>
+                <video autoplay muted loop id="experiences-video" style="display: none;">
+                    <source src="video/video-ex03.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </aside>
+    </div>
+    
+    <footer>
+        <div><p>WE’RE CURRENTLY CREATING SOMETHING SPECIAL, SO YOU’LL MEET THE NEW ICÒNIC SOON. HOWEVER, GOOD THINGS TAKE TIME. SPECIALLY FOR THOSE WHO LOVE TO THINK AND RETHINK EVERY DETAIL IN THE MOST ICONIC WAY. THANKS FOR BEING PART OF THIS JOURNEY (ONCE AGAIN)!<span class="footer--dash">–</span></p></div>
+    </footer>
+
+    <script>
+
+function isDesktop() {
+    return window.matchMedia("(min-width: 1024px)").matches;
+}
+function isMobile() {
+    return window.matchMedia("(max-width: 1023px)").matches;
+}
+function isTouch() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+}        
+
+function showAdvertising() {
+    document.getElementById('advertising-video').style.display = 'block';
+}
+function showEntertainment() {
+    document.getElementById('entertainment-video').style.display = 'block';
+}
+function showExperiences() {
+    document.getElementById('experiences-video').style.display = 'block';
+}
+
+function hideAdvertising() {
+    document.getElementById('advertising-video').style.display = 'none';
+}
+function hideEntertainment() {
+    document.getElementById('entertainment-video').style.display = 'none';
+}
+function hideExperiences() {
+    document.getElementById('experiences-video').style.display = 'none';
+}
+
+// Verifica si el dispositivo es de escritorio y añade los eventos de mouse
+if (isDesktop()) {
+    const asideAdvertising = document.querySelector('.aside--advertising');
+    const asideEntertainment = document.querySelector('.aside--entertainment');
+    const asideExperiences = document.querySelector('.aside--experiences');
+    asideAdvertising.addEventListener('mouseenter', showAdvertising);
+    asideAdvertising.addEventListener('mouseleave', hideAdvertising);
+    asideEntertainment.addEventListener('mouseenter', showEntertainment);
+    asideEntertainment.addEventListener('mouseleave', hideEntertainment);
+    asideExperiences.addEventListener('mouseenter', showExperiences);
+    asideExperiences.addEventListener('mouseleave', hideExperiences);
+}
+
+// Función para cambiar la combinación de colores
+function changeBg() {
+            const body = document.body;
+            const p = document.querySelectorAll('p');
+            const a = document.querySelectorAll('a');
+            const h1 = document.querySelectorAll('h1');
+            const root = document.documentElement;
+
+            const combinations = [
+                {bodyBg: 'var(--grey-cl)', bodyColor: 'var(--black-cl)', pColor: 'var(--black-cl)', aColor: 'var(--black-cl)', h1Color: 'var(--black-cl)'},
+                {bodyBg: 'url(video/video-ex01.mp4)', bodyColor: 'var(--accent-cl)', pColor: 'var(--accent-cl)', aColor: 'var(--accent-cl)', h1Color: 'var(--accent-cl)'},
+                {bodyBg: 'var(--black-cl)', bodyColor: 'var(--grey-cl)', pColor: 'var(--grey-cl)', aColor: 'var(--grey-cl)', h1Color: 'var(--grey-cl)'},
+                {bodyBg: 'url(video/video-ex02.mp4)', bodyColor: 'var(--black-cl)', pColor: 'var(--black-cl)', aColor: 'var(--black-cl)', h1Color: 'var(--black-cl)'},
+                {bodyBg: 'var(--accent-cl)', bodyColor: 'var(--black-cl)', pColor: 'var(--black-cl)', aColor: 'var(--black-cl)', h1Color: 'var(--black-cl)'},
+                {bodyBg: 'var(--black-cl)', bodyColor: 'var(--accent-cl)', pColor: 'var(--accent-cl)', aColor: 'var(--accent-cl)', h1Color: 'var(--accent-cl)'}
+            ];
+
+            // Obtén la combinación actual y la siguiente
+            let currentIndex = 0; // Inicia con la primera combinación
+            let nextIndex = (currentIndex + 1) % combinations.length;
+
+            root.style.setProperty('--body-bg', combinations[currentIndex].bodyBg);
+            root.style.setProperty('--body-color', combinations[currentIndex].bodyColor);
+            p.forEach(function(element) {
+                element.style.color = combinations[currentIndex].pColor;
+            });
+            a.forEach(function(element) {
+                element.style.color = combinations[currentIndex].aColor;
+            });
+            h1.forEach(function(element) {
+                element.style.color = combinations[currentIndex].h1Color;
+            });
+            currentIndex = nextIndex;
+        }
+
+        // Solo ejecutar el código si el dispositivo es móvil y táctil
+        if (isMobile() && isTouch()) {
+            document.body.addEventListener('touchstart', function(e) {
+                if (e.target.tagName.toLowerCase() !== 'a') {
+                    changeBg();
+                }
+            });
+        }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+  /* ---- RESET ---- */
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
+
+  html {
+    color-scheme: light only;
+    hanging-punctuation: first last;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: auto;
+    scroll-behavior: smooth;
+    background-color: var(--cBW100);
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100svh;
+    /*overflow-x: hidden;*/
+    margin: 0 auto;
+  }
+
+  img,
+  picture,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  a:link,
+  a:visited,
+  a:active {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  /* **** END RESET **** */
+
+  /* **** VARIABLES **** */
+  :root {
+    --black-cl: #000;
+    --grey-cl: #c7d9dd;
+    --accent-cl: #F0FF00;
+  }
+  /* **** END VARIABLES **** */    
+
+  /* **** TYPE **** */
+
+  
+
+  @font-face {
+    font-family: 'FKGrotesk-Regular';
+    src: url('fonts/FKGrotesk-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    font-family: 'FKGrotesk-Regular', system-ui, sans-serif;
+    color: var(--black-cl);
+    text-transform: uppercase;
+  }
+
+  body {
+    font-size: 0.625rem;
+  }
+  
+  h1 {
+    font-family: 'FKGrotesk-Regular', system-ui, sans-serif;
+    font-size: 3.99rem;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  footer {
+    text-align: justify;
+  }
+
+   /* **** END TYPE **** */
+  /* **** GENERAL **** */
+
+  body {
+    background-color: var(--grey-cl);
+    min-height: 100dvh;
+    display: grid;
+    place-content: center;
+  }
+
+  main .main--dash {
+    position: relative;
+    top: -8px;
+  }
+
+  .footer--dash {
+    text-align: right;
+    position: relative;
+    display: block;
+    top: -10px;
+  }
+
+  main .main--iconic {
+    display: block;
+    text-align: right;
+  }
+
+  header, aside {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  header, main, aside {
+    margin-bottom: 3rem;
+  }
+
+  header, main, aside, footer {
+    max-width: 360px;
+    z-index: 2;
+  }
+
+  header div::before,
+  aside div::before,
+  main div::before,
+  footer div::before  {
+    content: "–";
+  }
+
+  main div::after {
+    content: "–";
+    text-align: right;
+    display: block;
+  }
+
+  .header--tel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header--contact a,
+  aside p {
+    display: block;
+  }
+
+
+/* **** END GENERAL **** */
+
+/* **** MEDIA QUERIES **** */
+
+  @media screen and (width >= 768px) {
+    body {
+      font-size: 0.75rem;
+    }
+    header, main, aside, footer {
+      max-width: 560px;
+    }
+
+    h1 {
+      font-size: 6.09rem;
+    }
+
+    main .main--dash {
+      top: -11px;
+    }
+  }
+
+  @media screen and (width >= 1024px) {
+   
+    body {
+      place-content: normal;
+      justify-items: center;
+      padding: 30px 45px;
+    }
+
+    body:has(.header--tel:hover),
+    body:has(.header--contact:hover) {
+      background-color: var(--accent-cl);
+    }
+    #advertising-video,
+    #entertainment-video,
+    #experiences-video {
+      display: block;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: 75vh;
+      z-index: 1;
+  }
+    
+    footer {
+      font-size: 25px;
+      max-width: 878px;
+    }
+
+    main, h1, .footer--dash {
+      display: none;
+    }
+
+    footer div::before  {
+      content: none;
+    }
+
+    .screen-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    header, aside {
+      gap: 5vw;
+    }
+
+    header, main, aside, .screen-header {
+      margin-bottom: 0;
+      height: fit-content;
+    }
+  }
