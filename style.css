@@ -164,6 +164,22 @@
     display: block;
   }
 
+  body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+}
+
+p {
+    color: var(--p-color);
+}
+
+a {
+    color: var(--a-color);
+}
+
+h1 {
+    color: var(--h1-color);
+}
 
 /* **** END GENERAL **** */
 
