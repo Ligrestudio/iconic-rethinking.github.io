@@ -185,23 +185,6 @@ h1 {
 
 /* **** MEDIA QUERIES **** */
 
-  @media screen and (width >= 340px) {
-    body {
-      font-size: 0.75rem;
-    }
-    header, main, aside, footer {
-      max-width: 314px;
-    }
-
-    h1 {
-      font-size: 44px;
-    }
-
-    main .main--dash {
-      top: -7px;
-    }
-  }
-
   @media screen and (width >= 378px) {
     body {
       font-size: 0.75rem;
@@ -211,13 +194,14 @@ h1 {
     }
 
     h1 {
-      font-size: 56px;
+      font-size: 60px;
     }
 
     main .main--dash {
       top: -8px;
     }
   }
+  
 
   @media screen and (width >= 768px) {
     body {
