@@ -140,7 +140,7 @@ function changeBg() {
 
         // Solo ejecutar el código si el dispositivo es móvil y táctil
         if (isMobile() && isTouch()) {
-            document.body.addEventListener('touchstart', function(e) {
+            document.body.addEventListener('pointerdown', function(e) {
                 if (e.target.tagName.toLowerCase() !== 'a') {
                     changeBg();
                 }
