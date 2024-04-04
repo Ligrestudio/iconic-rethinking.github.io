@@ -56,8 +56,8 @@
   /* **** VARIABLES **** */
   :root {
     --black-cl: #000;
-    --grey-cl: #c7d9dd;
-    --accent-cl: #F0FF00;
+    --grey-cl: #ecf0f1;
+    --accent-cl: #efff00;
     --body-bg: var(--grey-cl); /* Valor por defecto para el fondo del cuerpo */
     --body-color: var(--black-cl); /* Valor por defecto para el color del texto del cuerpo */
     --p-color: var(--black-cl); /* Valor por defecto para el color del texto de los párrafos */
