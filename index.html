@@ -37,19 +37,10 @@
         </main>
         <aside>
             <div class="aside--advertising"><p>Advertising</p>
-                <video autoplay muted loop playsinline id="advertising-video" style="display: none;">
-                    <source src="video/video-ex01.mp4" type="video/mp4" />
-                </video>
             </div>
             <div><p class="aside--entertainment">Entertainment</p>
-                <video autoplay muted loop playsinline id="entertainment-video" style="display: none;">
-                    <source src="video/video-ex02.mp4" type="video/mp4" />
-                </video>
             </div>
             <div><p class="aside--experiences">Experiences</p>
-                <video autoplay muted loop playsinline id="experiences-video" style="display: none;">
-                    <source src="video/video-ex03.mp4" type="video/mp4" />
-                </video>
             </div>
         </aside>
     </div>
@@ -70,39 +61,6 @@ function isTouch() {
     return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 }        
 
-function showAdvertising() {
-    document.getElementById('advertising-video').style.display = 'block';
-}
-function showEntertainment() {
-    document.getElementById('entertainment-video').style.display = 'block';
-}
-function showExperiences() {
-    document.getElementById('experiences-video').style.display = 'block';
-}
-
-function hideAdvertising() {
-    document.getElementById('advertising-video').style.display = 'none';
-}
-function hideEntertainment() {
-    document.getElementById('entertainment-video').style.display = 'none';
-}
-function hideExperiences() {
-    document.getElementById('experiences-video').style.display = 'none';
-}
-
-// Verifica si el dispositivo es de escritorio y añade los eventos de mouse
-if (isDesktop()) {
-    const asideAdvertising = document.querySelector('.aside--advertising');
-    const asideEntertainment = document.querySelector('.aside--entertainment');
-    const asideExperiences = document.querySelector('.aside--experiences');
-    asideAdvertising.addEventListener('mouseenter', showAdvertising);
-    asideAdvertising.addEventListener('mouseleave', hideAdvertising);
-    asideEntertainment.addEventListener('mouseenter', showEntertainment);
-    asideEntertainment.addEventListener('mouseleave', hideEntertainment);
-    asideExperiences.addEventListener('mouseenter', showExperiences);
-    asideExperiences.addEventListener('mouseleave', hideExperiences);
-}
-
 // Función para cambiar la combinación de colores
 
 let currentIndex = 0; // Inicia con la primera combinación
@@ -116,9 +74,7 @@ function changeBg() {
 
             const combinations = [
                 {bodyBg: 'var(--grey-cl)', bodyColor: 'var(--black-cl)', pColor: 'var(--black-cl)', aColor: 'var(--black-cl)', h1Color: 'var(--black-cl)'},
-                {bodyBg: 'url("video/video-ex01.mp4")', bodyColor: 'var(--accent-cl)', pColor: 'var(--accent-cl)', aColor: 'var(--accent-cl)', h1Color: 'var(--accent-cl)'},
                 {bodyBg: 'var(--black-cl)', bodyColor: 'var(--grey-cl)', pColor: 'var(--grey-cl)', aColor: 'var(--grey-cl)', h1Color: 'var(--grey-cl)'},
-                {bodyBg: 'url("video/video-ex02.mp4")', bodyColor: 'var(--black-cl)', pColor: 'var(--black-cl)', aColor: 'var(--black-cl)', h1Color: 'var(--black-cl)'},
                 {bodyBg: 'var(--accent-cl)', bodyColor: 'var(--black-cl)', pColor: 'var(--black-cl)', aColor: 'var(--black-cl)', h1Color: 'var(--black-cl)'},
                 {bodyBg: 'var(--black-cl)', bodyColor: 'var(--accent-cl)', pColor: 'var(--accent-cl)', aColor: 'var(--accent-cl)', h1Color: 'var(--accent-cl)'}
             ];

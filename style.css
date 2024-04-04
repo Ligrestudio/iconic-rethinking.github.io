@@ -232,19 +232,6 @@ h1 {
     body:has(.header--contact:hover) {
       background-color: var(--accent-cl);
     }
-    #advertising-video,
-    #entertainment-video,
-    #experiences-video {
-      display: block;
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: auto;
-      height: 75vh;
-      z-index: 1;
-  }
     
     footer {
       font-size: 25px;
